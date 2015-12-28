@@ -1,0 +1,57 @@
+<!-- #MAIN_PART#begin -->
+<h1 class="titre"><span>Arrêts par ligne</span></h1>
+
+<div class="bloc-gris" id="reseau">
+	<h1><span>Lignes virtuelles</span></h1>
+	<form action="###url###" method="post">
+		<div class="field_form">
+			<select name="ligne" id="ligne">
+				<option></option>
+				<!-- #lignes#begin -->
+				<option value="###value###" <!-- #selected#begin -->selected="selected"<!-- #selected#end -->>###name###</option>
+				<!-- #lignes#end -->
+			</select>
+		</div>
+		<div class="button_reserver button_form">
+			<input type="submit" name="reserver" value="Réserver" />
+		</div>
+		<div class="button_arret button_form">
+			<input type="submit" id="submit_arret" value="Voir les arrêts >>" />
+		</div>
+	</form>
+	<div class="bas-bloc-gris"></div>
+</div>
+
+<div id="resultatsLigne">
+	<!-- #resultat#begin -->
+		<h1>###ligne_name###</h1>
+		<!-- #arrets#begin -->
+			<div class="result">###name###</div>
+		<!-- #arrets#end -->
+	<!-- #resultat#end -->
+</div>
+
+
+<script type="text/javascript">
+	(function (){
+		$('submit_arret').remove();
+		var treeLigne = ###json###;
+		$('ligne').observe('change', function (event){
+			var element = event.element();
+			$('resultatsLigne').innerHTML = '';
+			if(parseInt(element.value)){
+				var count = 0;
+				$A(treeLigne[parseInt(element.value)].arrets).each(function(item){
+					if(item.name){
+						$('resultatsLigne').innerHTML += '<div class="result">' + item.name + '</div>';
+						count++;
+					}
+				});
+				$('resultatsLigne').innerHTML = '<h1>'+ treeLigne[parseInt(element.value)].name +'</h1>' + $('resultatsLigne').innerHTML;
+			}
+			
+		});
+	})();
+</script>
+
+<!-- #MAIN_PART#end -->

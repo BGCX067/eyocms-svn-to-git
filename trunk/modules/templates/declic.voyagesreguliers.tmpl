@@ -1,0 +1,66 @@
+<!-- #MAIN_PART#begin -->
+<h1 class="titre"><span>Mes voyages réguliers</span></h1>
+<!-- #message#begin --><div id="message"><b>###message###</b></div><!-- #message#end -->
+Liste de vos voyages réguliers :
+<table class="voyagesreguliers">
+	<thead>
+		<tr>
+			<th rowspan="2">Arrêt de départ</th>
+			<th rowspan="2">Arrêt d’arrivée</th>
+			<th rowspan="2">horaire de départ</th>
+			<th rowspan="2">horaire d'arrivée</th>
+			<th rowspan="2">Début de période</th>
+			<th rowspan="2">Fin de période</th>
+			<th rowspan="2">Nombre de personnes</th>
+			<th colspan="7">Semaine d'activation</th>
+		</tr>
+		<tr>
+			<th>L</th>
+			<th>M</th>
+			<th>M</th>
+			<th>J</th>
+			<th>V</th>
+			<th>S</th>
+			<th>D</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- #reservation#begin -->
+			<tr ###ODD_EVEN_TABLE_ROW###>
+				<td>###depart###</td>
+				<td>###arrivee###</td>
+				<td>###horaire_arrivee###</td>
+				<td>###horaire_depart###</td>
+				<td>###debut_periode###</td>
+				<td>###fin_periode###</td>
+				<td>###nb_personnes###</td>
+				<!-- #activation#begin -->
+					<td><!-- #active?#begin --><img src="###PATH:public/images/boule_rouge.gif###" /><!-- #active?#end --></td>
+				<!-- #activation#end -->
+			</tr>
+		<!-- #reservation#end -->
+	</tbody>
+</table>
+<a href="###url_activer###" title="Activer ses voyages réguliers">Activer vos voyages réguliers</a>
+<!-- #MAIN_PART#end -->
+
+<!-- #FORMACTIVER_PART#begin -->
+<h1 class="titre"><span>Mes voyages réguliers</span></h1>
+<!-- #message#begin --><div id="message"><b>###message###</b></div><!-- #message#end -->
+<form action="###url_activer###">
+	<div>
+		<label for="date_activation">Date d'activation :</label>
+		<input type="text" name="date_activation" id="date_activation" value="" />
+		###CALENDAR:date_activation,bouton_activation###
+	</div>
+	<input type="submit" name="activer" />
+</form>
+<!-- #FORMACTIVER_PART#end -->
+
+
+<!-- #CONFIRM_PART#begin -->
+<h1 class="titre"><span>Mes voyages réguliers</span></h1>
+<p>Confimer l'activation des voyages réguliers à la date suivante : ###date_activation###<br />
+<a href="###url_confirmer###" title="Confirmer">Confirmer</a>
+</p>
+<!-- #CONFIRM_PART#end -->

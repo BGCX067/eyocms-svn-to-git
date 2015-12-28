@@ -1,0 +1,109 @@
+<!-- #MAIN_PART#begin -->
+<h1 class="titre"><span>Réservation en ligne</span></h1>
+<form action="###url###" method="post">
+<div class="entree-content">
+	<span class="sous-titre-content"><label for="ligne">• Ligne choisie</label></span>
+	<select name="ligne" size="1" id="ligne">
+			<option></option>
+			<!-- #lignes#begin -->
+			<option value="###value###" <!-- #selected#begin -->selected="selected"<!-- #selected#end -->>###name###</option>
+			<!-- #lignes#end -->
+		</select>
+		<input type="submit" value="valider" />
+</div>
+<div class="bloc-gris">
+	<div class="haut-bloc-gris">
+		<img src="###PATH:public/images/dep.png###" height="30" width="82" />
+		<img src="###PATH:public/images/arr.png###" style="margin-left: 300px;" height="30" width="96" />
+	</div>
+  <div class="content-bloc-gris">
+		<div class="depart"> 
+			<p><label for="depart">Mes arrêts</label><br />
+			<select name="depart" id="depart">
+				<option></option>
+				<!-- #arrets_depart#begin -->
+					<option value="###value###" <!-- #selected#begin -->selected="selected"<!-- #selected#end -->>###name###</option>
+				<!-- #arrets_depart#end -->
+			</select>
+			<br />
+			<br />
+      Détails: </p>
+      <p class="adresse">
+				<!--Adresse : <span class="champ-adresse">Rue du pont de fer</span><br />
+        Commune :  <span class="champ-adresse">Chalon sur Saône</span><br />
+        Code postal : <span class="champ-adresse">71100 </span>-->
+			</p>
+		</div>
+		<div class="arrivee">
+			<p><label for="arrive">Mes arrêts</label><br />
+			<select name="arrive" id="arrive">
+				<option></option>
+				<!-- #arrets_arrive#begin -->
+					<option value="###value###" <!-- #selected#begin -->selected="selected"<!-- #selected#end -->>###name###</option>
+				<!-- #arrets_arrive#end -->
+			</select>
+			<br />
+			<br />
+			Détails: </p>
+			<p>
+				<!--<span class="adresse">Adresse :</span> <span class="champ-adresse">Rue du pont de fer</span><br />
+				<span class="adresse">Commune :</span> <span class="champ-adresse">Chalon sur Saône</span><br />
+				<span class="adresse">Code postal</span> : <span class="champ-adresse">71100</span>-->
+			</p>
+		</div>
+		<br style="clear:both;"/>
+		<div class="date">
+			<p><label for="date"><img src="###PATH:public/images/date.png###" height="32" width="69" /></label></p>
+			<p>
+				<input id="date" name="date" value="###date###" type="text"/>
+				###CALENDAR:date,bouton_date###
+			</p>
+		</div>
+		<div class="horaires">
+			<p><label for="heure"><img src="###PATH:public/images/horaires.png###" height="32" width="108" /></label><br /></p>
+			<p>
+				<input name="heure" id="heure" size="3" type="text" value="###heure###" />H
+				<input name="min" id="min" size="3" type="text" value="###min###" />min
+			</p>
+		</div>
+		<div class="nombre">
+			<p><label for="nombre"><img src="###PATH:public/images/nombre.png###" height="33" width="99" /></label></p>
+			<p>  
+				<input name="nombre" id="nombre" size="3" type="text" value="###nombre###" />
+				<br />
+				Max: 4 personnes<br />
+				(Adhérent compris)</p>
+		</div>
+		<div class="trouver">
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p>
+				<input name="recherche" id="button" value="recherche" type="submit" />
+			</p>
+		</div>
+	</div>
+	<div class="bas-bloc-gris"></div>
+</div>
+<!-- #resultat#begin -->
+<table class="resultatRecherche">
+	<tr>
+		<th>Heure de départ</th>
+		<th>Heure de d'arrivée</th>
+	</tr>
+	<!-- #resultat_ligne#begin -->
+	<tr>
+		<td>###depart###</td>
+		<td>###arrivee###</td>
+	</tr>
+	<!-- #resultat_ligne#end -->
+</table>
+<!-- #resultat#end -->
+</form>
+<script type="text/javascript">
+
+$('ligne').observe('change', function (event){
+		event.element().form.submit();
+
+});
+</script>
+<!-- #MAIN_PART#end -->

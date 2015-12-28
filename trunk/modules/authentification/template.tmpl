@@ -1,0 +1,40 @@
+<!-- #LOGIN_PART#begin -->
+<h1 class="titre"><span>CONNEXION</span></h1>
+<div class="intro-connexion">
+	<p>Ut ac est id purus imperdiet convallis quis eget sem. Praesent rhoncus malesuada velit, ac fermentum ligula fermentum et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam tempus viverra tellus ac ultricies. Nulla eleifend imperdiet libero sed faucibus. Integer eget iaculis nunc. Pellentesque aliquet euismod sem, nec porttitor sem faucibus varius. Proin nec tellus ipsum, nec pretium libero.</p>
+	<img src="###PATH:public/images/bus_connexion.gif###" />
+</div>
+
+<div class="bloc-gris" id="connection">
+	<h1><span>Réservation en ligne</span></h1>
+	<form action="###url_login###" method="post">
+		<input type="hidden" value="true" name="formlogin" />
+		<div class="field_form">
+			<label for="code_adherent">Code adhérent :</label><input type="text" value="" id="code_adherent" name="code_adherent" />
+			<span>(8 chiffres)</span>
+		</div>
+		<div class="field_form">
+			<label for="no_adherent">Numéro confidentiel :</label><input type="text" value="" id="no_adherent" name="no_adherent" />
+			<span>(4 chiffres)</span>
+		</div>
+		<div class="button_form">
+			<input type="submit" value="Se connecter >>" name="connexion"/>
+		</div>
+	</form>
+</div>
+<!-- #LOGIN_PART#end -->
+
+
+<!-- #LOGOUT_PART#begin -->
+<form action="###url_logout###" method="post">
+	<input type="hidden" value="true" name="formlogin" />
+	<input type="submit" value="Deconnexion" name="deconnexion"/>
+</form>
+<!-- #LOGOUT_PART#end -->
+
+
+
+<!-- #CHOICE_PART#begin -->
+<a href="###login###">S'authentifer</a>
+<a href="###adhesion###">Faire une demande d'adhésion</a>
+<!-- #CHOICE_PART#end -->

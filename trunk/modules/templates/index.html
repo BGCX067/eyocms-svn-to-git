@@ -1,0 +1,104 @@
+<!-- #DEFAULT_PART#begin -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<title>STAC</title>
+		###header###
+
+		<!--[if IE]>
+			###ADDCSSFILE:public/style_ie.css###
+		<![endif]-->
+	</head>
+	<body>
+		<!--[if IE 6]>
+			<div id="ie6warning"><p>Le site n&#x27;est pas optimis&eacute; pour fonctionner avec Internet Explorer version 6.0. Nous vous recommandons de <a href="http://www.browserchoice.eu/BrowserChoice/browserchoice_fr.htm">choisir un navigateur plus récent</a> par exemple une version Internet Explorer sup&eacute;rieur ou &eacute;gale &agrave; la version 7.0.</p></div>
+		<![endif]-->
+		<div id="container">
+			<div id="header">
+				<object id="flashban" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1024" height="216">
+					<param name="movie" value="###PATH:public/flash/banniere.swf###" />
+					<!--[if !IE]>-->
+						<object type="application/x-shockwave-flash" data="###PATH:public/flash/banniere.swf###" width="1024" height="216">
+					<!--<![endif]-->
+						<a href="###PATH:###"><img alt="&lt;span class=&quot;translation_missing&quot;&gt;fr, header, logo_text&lt;/span&gt;" src="###PATH:public/images/logo.png###" /></a>
+						<p><span>Laissez-vous transporter...</span>Laissez-vous transporter...</p>
+					<!--[if !IE]>-->
+						</object>
+					<!--<![endif]-->
+				</object>
+			</div>
+			<div id="wrapper">
+				<div id="content">
+					<!-- <div class="nav_breadcrumb">###title###</div> -->
+					<div id="mainContent">
+						<div class="sectionHeader">
+							<h2>###type_content###</h2>
+						</div>
+						<div class="sectionBody clearfix">
+							<div class="entree-content">
+								Accenderat super his incitatum propositum ad nocendum aliqua mulier vilis, quae ad palatium ut poposcerat intromissa insidias ei latenter obtendi prodiderat a militibus obscurissimis. quam Constantina exultans ut in tuto iam locata mariti salute muneratam vehiculoque inpositam per regiae ianuas emisit in publicum, ut his inlecebris alios quoque ad indicanda proliceret paria vel maiora.
+							</div>
+							###content###
+						</div>
+						<div class="sectionFooter"></div>
+					</div>
+					<div id="menu">
+						###menu###
+					</div>
+					<div class="bonjour">
+						###bonjour###
+					</div>
+				</div>
+			</div>
+			<div id="sidebar">
+				<div id="subscriptions">
+					<h1>Accès direct</h1>
+					<h2>Abonnements</h2>
+					<ul>
+						<li class="shortcut reflex">
+							<h3>réflex<span></span></h3>
+							<a href="http://allocyclo.com/reflex/inscription.php">s'abonner</a>
+							<p>Vélos en libre service</p>
+						</li>
+					</ul>
+					<h2>Réservation</h2>
+					<ul>
+						<li class="shortcut declic">
+							<h3>déclic<span></span></h3>
+							<a href="###LINK:reseau,declic###" title="Déclic, transport à la demande">réserver</a>
+							<p>Transport à la demande</p>
+						</li>
+						<li class="shortcut pixel">
+							<h3>pixel<span></span></h3>
+							<a href="###LINK:reseau,pixel###" title="Pixel, transport de personnes en situation de handicap">réserver</a>
+							<p>Transport de personnes en situation de handicap</p>
+						</li>
+					</ul>
+				</div><!-- END SUBSCRIPTIONS -->
+				<ul class="links">
+					<li>
+						<a href="/sitemap">Plan du site</a>
+					</li>
+					<li>
+						<a href="/pages/21" title="Mentions légales">Mentions légales</a>
+					</li>
+				</ul>
+				<a href="http://stac.agilisprod.com/pages/accueil"><img class="logo" src="###PATH:public/images/transdev.png###"></img></a>
+			</div> <!-- END SIDEBAR -->
+		</div> <!-- END CONTAINER -->
+		<script type="text/javascript">
+			(function (){
+				$(document.body).addClassName('hasJs');
+				rC = new DHTMLgoodies_roundedCorners();
+				$$('.bloc-gris').each(function (item){
+					rC.addTarget($(item).identify(),10,10,'#C7C6C6','#FFFFFF', 0);
+				})
+				rC.init();
+			})();
+		</script>
+	</body>
+</html>
+<!-- #DEFAULT_PART#end -->

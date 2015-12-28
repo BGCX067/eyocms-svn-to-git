@@ -1,0 +1,106 @@
+<!-- #MAIN_PART#begin -->
+<h1 class="titre"><span>Mes réservations</span></h1>
+<!-- #message#begin --><div id="message"><b>###message###</b></div><!-- #message#end -->
+<table class="mesreservations">
+	<thead>
+		<tr>
+			<th>Arrêt de départ</th>
+			<th>Arrêt d’arrivée</th>
+			<th>horaire de départ</th>
+			<th>horaire d'arrivée</th>
+			<th>Nombre de personnes</th>
+			<th colspan="2">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- #reservation#begin -->
+			<tr ###ODD_EVEN_TABLE_ROW###>
+				<td>###depart###</td>
+				<td>###arrivee###</td>
+				<td>###horaire_arrivee###</td>
+				<td>###horaire_depart###</td>
+				<td>###nb_personnes###</td>
+				<td><a href="###url_modifier###" title="Modifier">Modifer</a></td>
+				<td><a href="###url_annuler###" title="Annuler">Annuler</a></td>
+			</tr>
+		<!-- #reservation#end -->
+	</tbody>
+</table>
+<!-- #MAIN_PART#end -->
+
+
+<!-- #FORMANNULER_PART#begin -->
+<h1 class="titre"><span>Mes réservations</span></h1>
+Confirmer la suppresion de la réservation suivante :
+<table class="mesreservations">
+	<thead>
+		<tr>
+			<th>Arrêt de départ</th>
+			<th>Arrêt d’arrivée</th>
+			<th>horaire de départ</th>
+			<th>horaire d'arrivée</th>
+			<th>Nombre de personnes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>###depart###</td>
+			<td>###arrivee###</td>
+			<td>###horaire_arrivee###</td>
+			<td>###horaire_depart###</td>
+			<td>###nb_personnes###</td>
+		</tr>
+	</tbody>
+</table>
+<a href="###confirmer###">Confirmer l'annulation</a>
+<a href="###retour_list###">Retour à la liste de mes réservations</a>
+<!-- #FORMANNULER_PART#end -->
+
+<!-- #FORMMODIFIER_PART#begin -->
+<h1 class="titre"><span>Mes réservations</span></h1>
+<!-- #message#begin --><div id="message"><b>###message###</b></div><!-- #message#end -->
+<b>Récapitulatif de la réservation :</b>
+<table class="mesreservations">
+	<thead>
+		<tr>
+			<th>Arrêt de départ</th>
+			<th>Arrêt d’arrivée</th>
+			<th>horaire de départ</th>
+			<th>horaire d'arrivée</th>
+			<th>Nombre de personnes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>###depart###</td>
+			<td>###arrivee###</td>
+			<td>###horaire_arrivee###</td>
+			<td>###horaire_depart###</td>
+			<td>###nb_personnes###</td>
+		</tr>
+	</tbody>
+</table>
+<form action="###url###" method="post">
+	<input type="hidden" name="horaire" value="###horaire###" />
+	<input type="hidden" name="depart" value="###code_depart###" />
+	<input type="hidden" name="arrivee" value="###code_arrivee###" />
+	<div><label for="nb_personnes">Nombre de personnes : </label><input type="text" name="nb_personnes" id="nb_personnes" /></div>
+	<input type="submit" name="confirmer_modification" id="confirmer_modification" value="Valider" />
+</form>
+<a href="###retour_list###">Retour à la liste de mes réservations</a>
+<script type="text/javascript">
+(function (){
+	var oldnbpersonne = ###nb_personnes###;
+	$('confirmer_modification').up('form').observe('submit', function (event){
+			var value = $('nb_personnes').value;
+			if(!value || parseInt(value).toString() != value){
+				alert('Vous devez rentrer un nombre de personnes');
+				event.stop();	
+			} else if(value == oldnbpersonne){
+				alert('Le nombre de personnes doit être différent de l\'ancienne valeur');
+				event.stop();
+			}
+	});
+})();
+</script>
+<!-- #FORMMODIFIER_PART#end -->

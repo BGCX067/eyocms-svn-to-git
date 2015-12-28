@@ -1,0 +1,12 @@
+{
+    "HTTPS" : false,
+    "HOST"  : "127.0.0.1",
+    "PORT"  : 8080,
+    "DATABASE": {
+        "USER"     : "malicia",
+        "PASS"     : "malicia",
+        "HOST"     : "localhost",
+        "PORT"     : "3306",
+        "DATABASE" : "malicia"
+    }
+}
